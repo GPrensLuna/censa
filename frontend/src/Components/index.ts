@@ -6,7 +6,6 @@ export { LoginForm } from "./auth/LoginForm";
 export { RegisterForm } from "./auth/RegisterForm";
 export { ButtonForm } from "./components/ButtonForm";
 export { ButtonOnSubmit } from "./components/ButtonOnSubmit";
-export { ButtonAuth } from "./components/ButtonAuth";
 export { ButtosProfileMenu } from "./components/ButtosProfileMenu";
 
 //toast

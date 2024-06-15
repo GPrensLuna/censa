@@ -13,9 +13,8 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ButtonAuth, ButtosProfileMenu } from '@/Components';
-import { useSession } from 'next-auth/react';
-import { menuClient, menuAdmin, menuProfile } from "@/ts";
+import { ButtosProfileMenu } from '@/Components';
+import { menuClient, menuProfile } from "@/ts";
 
 
 function classNames(...classes: any[]) {
@@ -25,11 +24,10 @@ function classNames(...classes: any[]) {
 export const NavBar = () => {
     const current = usePathname();
 
-    const { data: session, } = useSession();
+    const session = false
 
     const menu = [
         ...(session ? menuClient.filter(item => item.id !== "login") : menuClient),
-        ...(session && session.user.roll === "admin" ? menuAdmin : []),
     ]
 
     return (

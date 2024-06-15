@@ -7,7 +7,6 @@ import { ButtonForm, ButtonOnSubmit, errorToast, successToast } from "@/Componen
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import validationRules from "@/ts/Auth/ValidationYup";
-import { signIn } from "next-auth/react";
 
 export const LoginForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -15,19 +14,8 @@ export const LoginForm = () => {
     const router = useRouter()
 
     const onSubmit = handleSubmit(async (data) => {
-        const res = await signIn("credentials", {
-            email: data.email,
-            password: data.password,
-            redirect: false,
-        });
-        if (res?.error) {
-            setBackendErrors(res?.error as any)
-            errorToast(res?.error)
-        } else {
-            successToast(res?.ok as any || "success")
-            router.push('/')
-            router.refresh()
-        }
+
+        console.log(data)
     });
 
     return (<>
