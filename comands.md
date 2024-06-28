@@ -2,6 +2,9 @@ npm install -g pnpm
 npm install -g ts-node
 npm install -g typescript
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 pnpm install ts-node
 pnpm install nodemon
